@@ -130,7 +130,7 @@ app.get('/favouriteCourses/:id', async(req,res) => {
       const favoriteCourseIds = user.favouriteCourses.map((favCourse) => favCourse.courseId); // Assuming the field is named 'favoriteCourses'
   
       // Find the favorite courses based on the IDs in the array
-      const favoriteCourses = await Course.find({
+      const favoriteCourses = await CourseSD.find({
         _id: { $in: favoriteCourseIds },
       });
 
