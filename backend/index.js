@@ -14,7 +14,8 @@ dotenv.config({ path: ".env" });
 app.use(bodyParser.json())
 
 // Allow requests from specific origins
-app.use(cors({ origin: 'http://localhost:3000' }));
+// app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors({ origin: 'https://onlinecourses-0o2r.onrender.com' }));
 
 // console.log(process.env.MONGODB_URL)
 mongoose.connect(process.env.MONGODB_URL, { dbName: process.env.DB_NAME })
