@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+body{
+  font-family: 'Lato';
+}
+
+.navbar-ul{
+  margin: 0px;
+  background-color: #9e5ce498;
+  padding: 4px;
+}
+
+.navbar-ul li{
+  display: inline-block;
+  padding: 10px;
+}
+
+.navbar-ul li a{
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.864);
+  padding-inline: 5px;
+}
+
+.navbar-right li{
+  float: right;
+}
+
+.footer{
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  background-color: #9e5ce498;
+}
+
+.footer h3{
+  margin: 10px;
+}
+
+.register{
+  margin-left: 30%;
+}
+
+.login{
+  margin-left: 30%;
+  margin-top: 100px;
+}
+
+.inputBox{
+  display: block;
+  width: 300px;
+  padding: 7px;
+  margin: 25px;
+  border: 1px solid #9e5ce498;
+  border-radius: 5px;
+}
+
+.inputBox:focus{
+  outline: none;
+  box-shadow: 0 0 0 0.125rem #9e5ce498;
+}
+
+.submit-btn{
+  margin: 25px;
+  padding: 10px;
+  width: 100px;
+  background-color: #9e5ce498;
+  border: 2px solid #9e5ce498;
+  border-radius: 5px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

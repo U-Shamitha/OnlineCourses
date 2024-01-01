@@ -1,0 +1,18 @@
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  h2 {
+    margin: 5px 0;
+  }
+
+  .white-text{
+    color: white !important;
+  }
+  
