@@ -9,14 +9,14 @@ const path = require('path');
 const app = express();
 const port = 5000;
 const dotenv = require("dotenv"); //  Loads environment variables from .env file
-dotenv.config({ path: "../.env" });
+dotenv.config({ path: ".env" });
 
 app.use(bodyParser.json())
 
 // Allow requests from specific origins
 app.use(cors({ origin: 'http://localhost:3000' }));
 
-console.log(process.env.MONGODB_URL)
+// console.log(process.env.MONGODB_URL)
 mongoose.connect(process.env.MONGODB_URL, { dbName: process.env.DB_NAME })
 
 
@@ -135,7 +135,7 @@ app.get('/favouriteCourses/:id', async(req,res) => {
 
       res.status(201).json({ favouriteCourses: favoriteCourses });
   
-      console.log('Favorite courses:', favoriteCourses);
+      // console.log('Favorite courses:', favoriteCourses);
     } else {
       console.log('User not found.');
     }
@@ -147,7 +147,7 @@ app.get('/favouriteCourses/:id', async(req,res) => {
 
 app.post('/api/login', async (req, res) => {
   try {
-    console.log(req.body);
+    // console.log(req.body);
     const user = await Users.findOne({ email: req.body.email })
     if (user != null) {
       if (user.password == req.body.password) {

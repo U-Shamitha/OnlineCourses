@@ -3,17 +3,20 @@ import axios from './axios/axiosConfig';
 import CourseCard from './CourseCard';
 
 import './css/CourseCard.css'
+import Loading from './Loading';
 
 function CourseList() {
   const [query, setQuery] = useState('');
   const [courses, setCourses] = useState([]);
   const [filteredCourses, setFilteredCourses] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios.get('/courses') // Make a GET request to your backend API
       .then((response) => {
         setCourses(response.data);
         setFilteredCourses(response.data);
+        setLoading(false);
       })
       .catch((error) => {
         console.error(error);
@@ -49,11 +52,12 @@ function CourseList() {
           <button className='search-btn' onClick={handleSearch}>Search</button>
         </div>
       </div>
-      <div className="courses-grid">
+      {!loading ? <div className="courses-grid">
         {filteredCourses.map((course, index) => (
           <CourseCard key={index} course={course} />
         ))}
-      </div>
+      </div> : 'Loading...'
+      }
     </div>
   );
 }
